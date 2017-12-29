@@ -311,7 +311,7 @@
     }
     
     if ([self.delegate respondsToSelector:@selector(contactPicker:didRemoveContact:)]){
-        [self.delegate contactPicker:self didRemoveContact:[contact nonretainedObjectValue]];
+        [self.delegate contactPicker:self didRemoveContact:contact];
     }
     
     [self removeContactByKey:contact];
@@ -550,7 +550,7 @@
     
     id contact = [self contactForContactView:contactView];
     if ([self.delegate respondsToSelector:@selector(contactPicker:didSelectContact:)]){
-        [self.delegate contactPicker:self didSelectContact:[contact nonretainedObjectValue]];
+        [self.delegate contactPicker:self didSelectContact:contact];
     }
     
     [self.textField resignFirstResponder];
