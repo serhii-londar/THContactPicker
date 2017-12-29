@@ -55,6 +55,7 @@
 		6B3B2DF6183267B900798513 /* THContactPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THContactPickerView.m; sourceTree = "<group>"; };
 		7D951FBF19222B6800EFAAB4 /* THContactTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THContactTextField.h; sourceTree = "<group>"; };
 		7D951FC019222B6800EFAAB4 /* THContactTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THContactTextField.m; sourceTree = "<group>"; };
+		E805BA851FF6634A009C6E71 /* THContactViewMode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = THContactViewMode.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +142,7 @@
 				6B3B2DF6183267B900798513 /* THContactPickerView.m */,
 				7D951FBF19222B6800EFAAB4 /* THContactTextField.h */,
 				7D951FC019222B6800EFAAB4 /* THContactTextField.m */,
+				E805BA851FF6634A009C6E71 /* THContactViewMode.h */,
 			);
 			path = Classes;
 			sourceTree = SOURCE_ROOT;
