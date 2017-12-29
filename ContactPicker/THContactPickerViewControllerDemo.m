@@ -200,7 +200,7 @@ NSString *THContactPickerContactCellReuseID = @"THContactPickerContactCell";
         // Contact has not been selected, add it to THContactPickerView
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
         [self.privateSelectedContacts addObject:contact];
-        [self.contactPickerView addContact:contact withName:contactTilte];
+        [self.contactPickerView addContact:contact];
 //		
 //		UIColor *color = [UIColor blueColor];
 //		if (self.privateSelectedContacts.count % 2 == 0){
@@ -249,7 +249,7 @@ NSString *THContactPickerContactCellReuseID = @"THContactPickerContactCell";
     if (textField.text.length > 0){
         NSString *contact = [[NSString alloc] initWithString:textField.text];
         [self.privateSelectedContacts addObject:contact];
-        [self.contactPickerView addContact:contact withName:textField.text];
+        [self.contactPickerView addContact:contact];
     }
     return YES;
 }

@@ -20,7 +20,7 @@
 
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) NSMutableDictionary *contacts;	// Dictionary to store THContactViews for each contacts
-@property (nonatomic, strong) NSMutableArray *contactKeys;      // an ordered set of the keys placed in the contacts dictionary
+@property (nonatomic, strong) NSMutableArray<NSString *> *contactKeys;      // an ordered set of the keys placed in the contacts dictionary
 @property (nonatomic, strong) UILabel *placeholderLabel;
 @property (nonatomic, strong) UILabel *promptLabel;
 @property (nonatomic, assign) CGFloat lineHeight;
@@ -152,12 +152,12 @@
     [super setBackgroundColor:backgroundColor];
 }
 
-- (void)addContact:(id)contact withName:(NSString *)name {
-	[self addContact:contact withName:name withStyle:self.contactViewStyle andSelectedStyle:self.contactViewSelectedStyle];
+- (void)addContact:(NSString *)contact {
+	[self addContact:contact withStyle:self.contactViewStyle andSelectedStyle:self.contactViewSelectedStyle];
 }
 
-- (void)addContact:(id)contact withName:(NSString *)name withStyle:(THContactViewStyle *)bubbleStyle andSelectedStyle:(THContactViewStyle *)selectedStyle {
-    id contactKey = [NSValue valueWithNonretainedObject:contact];
+- (void)addContact:(NSString *)contact withStyle:(THContactViewStyle *)bubbleStyle andSelectedStyle:(THContactViewStyle *)selectedStyle {
+    id contactKey = contact;
     if ([self.contactKeys containsObject:contactKey]){
         NSLog(@"Cannot add the same object twice to ContactPickerView");
         return;
@@ -178,7 +178,7 @@
 		_showComma = !self.limitToOne;
 	}
 	
-    THContactView *contactView = [[THContactView alloc] initWithName:name style:bubbleStyle selectedStyle:selectedStyle showComma:_showComma];
+    THContactView *contactView = [[THContactView alloc] initWithName:contact style:bubbleStyle selectedStyle:selectedStyle showComma:_showComma];
     contactView.maxWidth = self.frame.size.width - self.promptLabel.frame.origin.x - 2 * _contactHorizontalPadding - 2 * kHorizontalSidePadding;
     contactView.minWidth = kTextFieldMinWidth + 2 * _contactHorizontalPadding;
     contactView.keyboardAppearance = self.keyboardAppearance;
@@ -230,9 +230,8 @@
     self.textField.text = @"";
 }
 
-- (void)removeContact:(id)contact {
-    id contactKey = [NSValue valueWithNonretainedObject:contact];
-	[self removeContactByKey:contactKey];
+- (void)removeContact:(NSString *)contact {
+	[self removeContactByKey:contact];
 }
 
 - (void)setPlaceholderLabelText:(NSString *)text {
@@ -323,7 +322,7 @@
     }
 }
 
-- (void)removeContactByKey:(id)contactKey {
+- (void)removeContactByKey:(NSString *)contactKey {
     // Remove contactView from view
     THContactView *contactView = [self.contacts objectForKey:contactKey];
     [contactView removeFromSuperview];
