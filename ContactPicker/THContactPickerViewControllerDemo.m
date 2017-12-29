@@ -39,18 +39,16 @@ NSString *THContactPickerContactCellReuseID = @"THContactPickerContactCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
     if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) {
         [self setEdgesForExtendedLayout:UIRectEdgeBottom|UIRectEdgeLeft|UIRectEdgeRight];
     }
-        
-    // Initialize and add Contact Picker View
+    
     self.contactPickerView = [[THContactPickerView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, kPickerViewHeight)];
     self.contactPickerView.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleWidth;
     self.contactPickerView.delegate = self;
-    [self.contactPickerView setPlaceholderLabelText:@"Who would you like to message?"];
-    [self.contactPickerView setPromptLabelText:@"To:"];
-    //[self.contactPickerView setLimitToOne:YES];
+    [self.contactPickerView setPlaceholderLabelText:@"Search"];
+    [self.contactPickerView setContactViewStyle:[[THContactViewStyle alloc] initWithTextColor:[UIColor colorWithRed:43.0 / 255.0 green:45.0 / 255.0 blue:45.0 / 255.0 alpha:1.0] backgroundColor:[UIColor colorWithRed:221.0 / 255.0 green:221.0 / 255.0 blue:221.0 / 255.0 alpha:1.0] cornerRadiusFactor:2.0] selectedStyle:nil];
     [self.view addSubview:self.contactPickerView];
     
     CALayer *layer = [self.contactPickerView layer];

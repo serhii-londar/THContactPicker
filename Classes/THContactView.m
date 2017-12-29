@@ -35,7 +35,7 @@
 #define kColorSelectedBorder [UIColor colorWithRed:56.0/255.0 green:0/255.0 blue:233.0/255.0 alpha:1.0]
 
 #define k7DefaultBorderWidth 0
-#define k7DefaultCornerRadiusFactor 5
+#define k7DefaultCornerRadiusFactor 2
 
 #define k7ColorText [UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0]
 #define k7ColorGradientTop  nil
@@ -98,6 +98,7 @@
     // Create Label
     self.label = [[UILabel alloc] init];
     self.label.backgroundColor = [UIColor clearColor];
+    self.label.numberOfLines = 0;
     if (self.showComma){
         self.label.text = [NSString stringWithFormat:@"%@,", self.name];
     } else {
@@ -138,7 +139,7 @@
     if (minWidth < maxWidth) {
         if (frame.size.width < minWidth) {
             frame.size.width = minWidth;
-        }else{
+        } else {
             if (frame.size.width > maxWidth ) {
                 frame.size.width = maxWidth;
             }
