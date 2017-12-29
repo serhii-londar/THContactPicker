@@ -141,11 +141,14 @@
             frame.size.width = minWidth;
         } else {
             if (frame.size.width > maxWidth ) {
+//                CGRect textRect = [self.name boundingRectWithSize:CGSizeMake(maxWidth, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{ NSFontAttributeName: self.label.font } context:nil];
+                
                 frame.size.width = maxWidth;
+//                frame.size.height = textRect.size.height;
             }
         }
     }
-
+    
     self.label.frame = frame;
 
     
@@ -206,8 +209,7 @@
     self.layer.borderWidth = self.style.borderWidth;
     if (self.style.cornerRadiusFactor > 0) {
         self.layer.cornerRadius = self.bounds.size.height / self.style.cornerRadiusFactor;
-    }
-    else {
+    } else {
         self.layer.cornerRadius = 0;
     }
 
