@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol ContactProtocol <NSObject>
+@protocol ContactProtocol 
 - (NSString *)name;
 - (NSString *)uniqueKey;
 @end
