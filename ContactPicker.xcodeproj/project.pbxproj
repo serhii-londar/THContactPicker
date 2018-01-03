@@ -25,6 +25,7 @@
 		6B3B2DFA183267B900798513 /* THContactView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3B2DF4183267B900798513 /* THContactView.m */; };
 		6B3B2DFB183267B900798513 /* THContactPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3B2DF6183267B900798513 /* THContactPickerView.m */; };
 		7D951FC119222B6800EFAAB4 /* THContactTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D951FC019222B6800EFAAB4 /* THContactTextField.m */; };
+		E87721911FFD23D700B843EC /* NSString+ContactProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = E87721901FFD23D700B843EC /* NSString+ContactProtocol.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,9 @@
 		7D951FBF19222B6800EFAAB4 /* THContactTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THContactTextField.h; sourceTree = "<group>"; };
 		7D951FC019222B6800EFAAB4 /* THContactTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THContactTextField.m; sourceTree = "<group>"; };
 		E805BA851FF6634A009C6E71 /* THContactViewMode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = THContactViewMode.h; sourceTree = "<group>"; };
+		E877218F1FFD23D700B843EC /* NSString+ContactProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+ContactProtocol.h"; sourceTree = "<group>"; };
+		E87721901FFD23D700B843EC /* NSString+ContactProtocol.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+ContactProtocol.m"; sourceTree = "<group>"; };
+		E87721921FFD24A600B843EC /* ContactProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContactProtocol.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +147,9 @@
 				7D951FBF19222B6800EFAAB4 /* THContactTextField.h */,
 				7D951FC019222B6800EFAAB4 /* THContactTextField.m */,
 				E805BA851FF6634A009C6E71 /* THContactViewMode.h */,
+				E877218F1FFD23D700B843EC /* NSString+ContactProtocol.h */,
+				E87721901FFD23D700B843EC /* NSString+ContactProtocol.m */,
+				E87721921FFD24A600B843EC /* ContactProtocol.h */,
 			);
 			path = Classes;
 			sourceTree = SOURCE_ROOT;
@@ -175,6 +182,11 @@
 			attributes = {
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Tristan Himmelman";
+				TargetAttributes = {
+					29A71BE21644824F005286F1 = {
+						LastSwiftMigration = 0910;
+					};
+				};
 			};
 			buildConfigurationList = 29A71BDD1644824F005286F1 /* Build configuration list for PBXProject "ContactPicker" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -215,6 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E87721911FFD23D700B843EC /* NSString+ContactProtocol.m in Sources */,
 				29A71BF416448250005286F1 /* main.m in Sources */,
 				6B3B2DFB183267B900798513 /* THContactPickerView.m in Sources */,
 				6B3B2DFA183267B900798513 /* THContactView.m in Sources */,
@@ -296,11 +309,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ContactPicker/ContactPicker-Prefix.pch";
 				INFOPLIST_FILE = "ContactPicker/ContactPicker-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Classes/ContactPicker-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -311,11 +329,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ContactPicker/ContactPicker-Prefix.pch";
 				INFOPLIST_FILE = "ContactPicker/ContactPicker-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Classes/ContactPicker-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};

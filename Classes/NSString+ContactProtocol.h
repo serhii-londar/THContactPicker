@@ -1,0 +1,14 @@
+//
+//  NSString+ContactProtocol.h
+//  ContactPicker
+//
+//  Created by Serhii Londar on 1/3/18.
+//  Copyright © 2018 Tristan Himmelman. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+@interface NSString (ContactProtocol)
+- (NSString *)name;
+- (NSString *)uniqueKey;
+@end

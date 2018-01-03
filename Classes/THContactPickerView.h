@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "THContactView.h"
+#import "ContactProtocol.h"
 
 @class THContactPickerView;
 
@@ -15,8 +16,8 @@
 
 @optional
 - (void)contactPickerDidResize:(THContactPickerView *)contactPicker;
-- (void)contactPicker:(THContactPickerView *)contactPicker didSelectContact:(id)contact;
-- (void)contactPicker:(THContactPickerView *)contactPicker didRemoveContact:(id)contact;
+- (void)contactPicker:(THContactPickerView *)contactPicker didSelectContact:(id<ContactProtocol>)contact;
+- (void)contactPicker:(THContactPickerView *)contactPicker didRemoveContact:(id<ContactProtocol>)contact;
 - (void)contactPicker:(THContactPickerView *)contactPicker textFieldDidBeginEditing:(UITextField *)textField;
 - (void)contactPicker:(THContactPickerView *)contactPicker textFieldDidEndEditing:(UITextField *)textField;
 - (BOOL)contactPicker:(THContactPickerView *)contactPicker textFieldShouldReturn:(UITextField *)textField;
@@ -34,9 +35,9 @@
 @property (nonatomic, assign) NSInteger maxNumberOfLines;	// maximum number of lines the view will display before scrolling
 @property (nonatomic, strong) UIFont *font;
 
-- (void)addContact:(NSString *)contact;
-- (void)addContact:(NSString *)contact withStyle:(THContactViewStyle*)bubbleStyle andSelectedStyle:(THContactViewStyle*) selectedStyle;
-- (void)removeContact:(NSString *)contact;
+- (void)addContact:(id<ContactProtocol>)contact;
+- (void)addContact:(id<ContactProtocol>)contact withStyle:(THContactViewStyle*)bubbleStyle andSelectedStyle:(THContactViewStyle*) selectedStyle;
+- (void)removeContact:(id<ContactProtocol>)contact;
 - (void)removeAllContacts;
 - (BOOL)resignFirstResponder;
 

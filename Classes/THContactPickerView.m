@@ -155,12 +155,12 @@
     [super setBackgroundColor:backgroundColor];
 }
     
-- (void)addContact:(NSString *)contact {
+- (void)addContact:(id<ContactProtocol>)contact {
     [self addContact:contact withStyle:self.contactViewStyle andSelectedStyle:self.contactViewSelectedStyle];
 }
     
-- (void)addContact:(NSString *)contact withStyle:(THContactViewStyle *)bubbleStyle andSelectedStyle:(THContactViewStyle *)selectedStyle {
-    id contactKey = contact;
+- (void)addContact:(id<ContactProtocol>)contact withStyle:(THContactViewStyle *)bubbleStyle andSelectedStyle:(THContactViewStyle *)selectedStyle {
+    id contactKey = contact.uniqueKey;
     if ([self.contactKeys containsObject:contactKey]){
         NSLog(@"Cannot add the same object twice to ContactPickerView");
         return;
@@ -181,7 +181,7 @@
         _showComma = !self.limitToOne;
     }
     
-    THContactView *contactView = [[THContactView alloc] initWithName:contact style:bubbleStyle selectedStyle:selectedStyle showComma:_showComma];
+    THContactView *contactView = [[THContactView alloc] initWithName:contact.name style:bubbleStyle selectedStyle:selectedStyle showComma:_showComma];
     contactView.maxWidth = self.frame.size.width - self.promptLabel.frame.origin.x - 2 * _contactHorizontalPadding - 2 * kHorizontalSidePadding;
     contactView.minWidth = kTextFieldMinWidth + 2 * _contactHorizontalPadding;
     contactView.keyboardAppearance = self.keyboardAppearance;
@@ -233,8 +233,8 @@
     self.textField.text = @"";
 }
     
-- (void)removeContact:(NSString *)contact {
-    [self removeContactByKey:contact];
+- (void)removeContact:(id<ContactProtocol>)contact {
+    [self removeContactByKey:contact.uniqueKey];
 }
     
 - (void)setPlaceholderLabelText:(NSString *)text {
