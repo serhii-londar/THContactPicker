@@ -37,7 +37,8 @@
 #define kHorizontalPaddingWithBackground	2   // the amount of padding to the left and right of each contact view (when bubbles have a non white background)
 #define kHorizontalSidePadding				10  // the amount of padding on the left and right of the view
 #define kVerticalPadding					2   // amount of padding above and below each contact view
-#define kTextFieldMinWidth					20  // minimum width of trailing text view
+#define kContactViewMinWidth                20  // minimum width of trailing text view
+#define kTextFieldMinWidth					120 // minimum width of trailing text view
 #define KMaxNumberOfLinesDefault			2
     
 - (id)initWithCoder:(NSCoder *)aDecoder {
@@ -183,7 +184,7 @@
     
     THContactView *contactView = [[THContactView alloc] initWithName:contact.name style:bubbleStyle selectedStyle:selectedStyle showComma:_showComma];
     contactView.maxWidth = self.frame.size.width - self.promptLabel.frame.origin.x - 2 * _contactHorizontalPadding - 2 * kHorizontalSidePadding;
-    contactView.minWidth = kTextFieldMinWidth + 2 * _contactHorizontalPadding;
+    contactView.minWidth = kContactViewMinWidth + 2 * _contactHorizontalPadding;
     contactView.keyboardAppearance = self.keyboardAppearance;
     contactView.returnKeyType = self.returnKeyType;
     contactView.delegate = self;
