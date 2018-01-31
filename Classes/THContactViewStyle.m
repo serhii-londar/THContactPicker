@@ -17,22 +17,47 @@
 	return [self initWithTextColor:textColor gradientTop:backgroundColor gradientBottom:backgroundColor borderColor:backgroundColor borderWidth:0 cornerRadiusFactor:cornerRadiusFactor];
 }
 
+- (id)initWithTextFieldTextColor:(UIColor *)textFieldTextColor
+                  labelTextColor:(UIColor *)labelTextColor
+                 backgroundColor:(UIColor *)backgroundColor
+              cornerRadiusFactor:(CGFloat)cornerRadiusFactor {
+    return [self initWithTextFieldTextColor:textFieldTextColor labelTextColor:labelTextColor gradientTop:backgroundColor gradientBottom:backgroundColor borderColor:backgroundColor borderWidth:0 cornerRadiusFactor:cornerRadiusFactor];
+}
+
 - (id)initWithTextColor:(UIColor *)textColor
             gradientTop:(UIColor *)gradientTop
          gradientBottom:(UIColor *)gradientBottom
             borderColor:(UIColor *)borderColor
             borderWidth:(CGFloat)borderWidth
      cornerRadiusFactor:(CGFloat)cornerRadiusFactor {
-    
     if (self = [super init]) {
-        self.textColor = textColor;
+        self.textFieldTextColor = textColor;
+        self.labelTextColor = textColor;
         self.gradientTop = gradientTop;
         self.gradientBottom = gradientBottom;
         self.borderColor = borderColor;
         self.borderWidth = borderWidth;
         self.cornerRadiusFactor = cornerRadiusFactor;
     }
-	
+    return self;
+}
+
+- (id)initWithTextFieldTextColor:(UIColor *)textFieldTextColor
+                  labelTextColor:(UIColor *)labelTextColor
+                     gradientTop:(UIColor *)gradientTop
+                  gradientBottom:(UIColor *)gradientBottom
+                     borderColor:(UIColor *)borderColor
+                     borderWidth:(CGFloat)borderWidth
+              cornerRadiusFactor:(CGFloat)cornerRadiusFactor; {
+    if (self = [super init]) {
+        self.textFieldTextColor = textFieldTextColor;
+        self.labelTextColor = labelTextColor;
+        self.gradientTop = gradientTop;
+        self.gradientBottom = gradientBottom;
+        self.borderColor = borderColor;
+        self.borderWidth = borderWidth;
+        self.cornerRadiusFactor = cornerRadiusFactor;
+    }
     return self;
 }
 

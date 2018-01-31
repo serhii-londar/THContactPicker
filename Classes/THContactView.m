@@ -65,19 +65,19 @@
         // default styles
         if (style == nil) {
             style = [[THContactViewStyle alloc] initWithTextColor:k7ColorText
-                                                 gradientTop:k7ColorGradientTop
-                                              gradientBottom:k7ColorGradientBottom
-                                                 borderColor:k7ColorBorder
-                                                 borderWidth:k7DefaultBorderWidth
-                                          cornerRadiusFactor:k7DefaultCornerRadiusFactor];
+                                                      gradientTop:k7ColorGradientTop
+                                                   gradientBottom:k7ColorGradientBottom
+                                                      borderColor:k7ColorBorder
+                                                      borderWidth:k7DefaultBorderWidth
+                                               cornerRadiusFactor:k7DefaultCornerRadiusFactor];
         }
         if (selectedStyle == nil) {
             selectedStyle = [[THContactViewStyle alloc] initWithTextColor:k7ColorSelectedText
-                                                         gradientTop:k7ColorSelectedGradientTop
-                                                      gradientBottom:k7ColorSelectedGradientBottom
-                                                         borderColor:k7ColorSelectedBorder
-                                                        borderWidth:k7DefaultBorderWidth
-                                                  cornerRadiusFactor:k7DefaultCornerRadiusFactor];
+                                                              gradientTop:k7ColorSelectedGradientTop
+                                                           gradientBottom:k7ColorSelectedGradientBottom
+                                                              borderColor:k7ColorSelectedBorder
+                                                              borderWidth:k7DefaultBorderWidth
+                                                       cornerRadiusFactor:k7DefaultCornerRadiusFactor];
         }
         
         self.style = style;
@@ -182,7 +182,7 @@
     viewLayer.borderColor = self.selectedStyle.borderColor.CGColor;
     self.gradientLayer.colors = [NSArray arrayWithObjects:(id)[self.selectedStyle.gradientTop CGColor], (id)[self.selectedStyle.gradientBottom CGColor], nil];
     
-    self.label.textColor = self.selectedStyle.textColor;
+    self.label.textColor = self.selectedStyle.labelTextColor;
     self.layer.borderWidth = self.selectedStyle.borderWidth;
     if (self.selectedStyle.cornerRadiusFactor > 0) {
         self.layer.cornerRadius = self.bounds.size.height / self.selectedStyle.cornerRadiusFactor;
@@ -205,7 +205,7 @@
     
     self.gradientLayer.colors = [NSArray arrayWithObjects:(id)[self.style.gradientTop CGColor], (id)[self.style.gradientBottom CGColor], nil];
     
-    self.label.textColor = self.style.textColor;
+    self.label.textColor = self.style.labelTextColor;
     self.layer.borderWidth = self.style.borderWidth;
     if (self.style.cornerRadiusFactor > 0) {
         self.layer.cornerRadius = self.bounds.size.height / self.style.cornerRadiusFactor;
