@@ -269,7 +269,7 @@
     
 - (void)setContactViewStyle:(THContactViewStyle *)style selectedStyle:(THContactViewStyle *)selectedStyle {
     self.contactViewStyle = style;
-    self.textField.textColor = style.textColor;
+    self.textField.textColor = style.textFieldTextColor;
     self.contactViewSelectedStyle = selectedStyle;
     
     for (id contactKey in self.contactKeys){
