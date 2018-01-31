@@ -26,6 +26,7 @@
 		6B3B2DFB183267B900798513 /* THContactPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3B2DF6183267B900798513 /* THContactPickerView.m */; };
 		7D951FC119222B6800EFAAB4 /* THContactTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D951FC019222B6800EFAAB4 /* THContactTextField.m */; };
 		E87721911FFD23D700B843EC /* NSString+ContactProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = E87721901FFD23D700B843EC /* NSString+ContactProtocol.m */; };
+		E89A52B32021FAEC001F6993 /* THContactPicker.podspec in Resources */ = {isa = PBXBuildFile; fileRef = E89A52B22021FAEC001F6993 /* THContactPicker.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		E877218F1FFD23D700B843EC /* NSString+ContactProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+ContactProtocol.h"; sourceTree = "<group>"; };
 		E87721901FFD23D700B843EC /* NSString+ContactProtocol.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+ContactProtocol.m"; sourceTree = "<group>"; };
 		E87721921FFD24A600B843EC /* ContactProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContactProtocol.h; sourceTree = "<group>"; };
+		E89A52B22021FAEC001F6993 /* THContactPicker.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = THContactPicker.podspec; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 		29A71BEE1644824F005286F1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E89A52B22021FAEC001F6993 /* THContactPicker.podspec */,
 				29A71BEF1644824F005286F1 /* ContactPicker-Info.plist */,
 				29A71BF016448250005286F1 /* InfoPlist.strings */,
 				29A71BF316448250005286F1 /* main.m */,
@@ -209,6 +212,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29A71BF216448250005286F1 /* InfoPlist.strings in Resources */,
+				E89A52B32021FAEC001F6993 /* THContactPicker.podspec in Resources */,
 				29A71BFA16448250005286F1 /* Default.png in Resources */,
 				29A71BFC16448250005286F1 /* Default@2x.png in Resources */,
 				6B3B2DEF1832679900798513 /* THContactPickerViewControllerDemo.xib in Resources */,
