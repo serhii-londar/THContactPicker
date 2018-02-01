@@ -13,15 +13,22 @@
 - (id)initWithTextColor:(UIColor *)textColor
 		backgroundColor:(UIColor *)backgroundColor
 	 cornerRadiusFactor:(CGFloat)cornerRadiusFactor {
-
-	return [self initWithTextColor:textColor gradientTop:backgroundColor gradientBottom:backgroundColor borderColor:backgroundColor borderWidth:0 cornerRadiusFactor:cornerRadiusFactor];
+    return [self initWithTextFieldTextColor:textColor labelTextColor:textColor gradientTop:backgroundColor gradientBottom:backgroundColor borderColor:backgroundColor borderWidth:0 cornerRadiusFactor:cornerRadiusFactor height:-1];
 }
 
 - (id)initWithTextFieldTextColor:(UIColor *)textFieldTextColor
                   labelTextColor:(UIColor *)labelTextColor
                  backgroundColor:(UIColor *)backgroundColor
               cornerRadiusFactor:(CGFloat)cornerRadiusFactor {
-    return [self initWithTextFieldTextColor:textFieldTextColor labelTextColor:labelTextColor gradientTop:backgroundColor gradientBottom:backgroundColor borderColor:backgroundColor borderWidth:0 cornerRadiusFactor:cornerRadiusFactor];
+    return [self initWithTextFieldTextColor:textFieldTextColor labelTextColor:labelTextColor gradientTop:backgroundColor gradientBottom:backgroundColor borderColor:backgroundColor borderWidth:0 cornerRadiusFactor:cornerRadiusFactor height:-1];
+}
+
+- (id)initWithTextFieldTextColor:(UIColor *)textFieldTextColor
+                  labelTextColor:(UIColor *)labelTextColor
+                 backgroundColor:(UIColor *)backgroundColor
+              cornerRadiusFactor:(CGFloat)cornerRadiusFactor
+                          height:(CGFloat)height {
+    return [self initWithTextFieldTextColor:textFieldTextColor labelTextColor:labelTextColor gradientTop:backgroundColor gradientBottom:backgroundColor borderColor:backgroundColor borderWidth:0 cornerRadiusFactor:cornerRadiusFactor height:height];
 }
 
 - (id)initWithTextColor:(UIColor *)textColor
@@ -30,16 +37,7 @@
             borderColor:(UIColor *)borderColor
             borderWidth:(CGFloat)borderWidth
      cornerRadiusFactor:(CGFloat)cornerRadiusFactor {
-    if (self = [super init]) {
-        self.textFieldTextColor = textColor;
-        self.labelTextColor = textColor;
-        self.gradientTop = gradientTop;
-        self.gradientBottom = gradientBottom;
-        self.borderColor = borderColor;
-        self.borderWidth = borderWidth;
-        self.cornerRadiusFactor = cornerRadiusFactor;
-    }
-    return self;
+    return [self initWithTextFieldTextColor:textColor labelTextColor:textColor gradientTop:gradientTop gradientBottom:gradientBottom borderColor:borderColor borderWidth:borderWidth cornerRadiusFactor:cornerRadiusFactor height:-1];
 }
 
 - (id)initWithTextFieldTextColor:(UIColor *)textFieldTextColor
@@ -48,7 +46,18 @@
                   gradientBottom:(UIColor *)gradientBottom
                      borderColor:(UIColor *)borderColor
                      borderWidth:(CGFloat)borderWidth
-              cornerRadiusFactor:(CGFloat)cornerRadiusFactor; {
+              cornerRadiusFactor:(CGFloat)cornerRadiusFactor {
+    return [self initWithTextFieldTextColor:textFieldTextColor labelTextColor:labelTextColor gradientTop:gradientTop gradientBottom:gradientBottom borderColor:borderColor borderWidth:borderWidth cornerRadiusFactor:cornerRadiusFactor height:-1];
+}
+
+- (id)initWithTextFieldTextColor:(UIColor *)textFieldTextColor
+                  labelTextColor:(UIColor *)labelTextColor
+                     gradientTop:(UIColor *)gradientTop
+                  gradientBottom:(UIColor *)gradientBottom
+                     borderColor:(UIColor *)borderColor
+                     borderWidth:(CGFloat)borderWidth
+              cornerRadiusFactor:(CGFloat)cornerRadiusFactor
+                          height:(CGFloat)height {
     if (self = [super init]) {
         self.textFieldTextColor = textFieldTextColor;
         self.labelTextColor = labelTextColor;
@@ -57,6 +66,7 @@
         self.borderColor = borderColor;
         self.borderWidth = borderWidth;
         self.cornerRadiusFactor = cornerRadiusFactor;
+        self.height = height;
     }
     return self;
 }
