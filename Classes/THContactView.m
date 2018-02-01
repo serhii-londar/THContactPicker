@@ -47,6 +47,8 @@
 #define k7ColorSelectedGradientBottom [UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0]
 #define k7ColorSelectedBorder nil
 
+#define kDefaultMinHeight -1
+
 - (id)initWithName:(NSString *)name {
     return [self initWithName:name style:nil selectedStyle:nil];
 }
@@ -88,7 +90,7 @@
 		} else {
 			_horizontalPadding = kHorizontalPadding;
 		}
-		
+        
         [self setupView];
     }
     return self;
@@ -132,7 +134,12 @@
     CGRect frame = self.label.frame;
     frame.origin.x = _horizontalPadding;
     frame.origin.y = kVerticalPadding;
-    
+    CGFloat minHeight = self.minHeight;
+    if (minHeight != -1) {
+        minHeight = minHeight - 2 * kVerticalPadding;
+    } else {
+        minHeight = frame.size.height;
+    }
     CGFloat maxWidth = self.maxWidth - 2 * _horizontalPadding;
     CGFloat minWidth = self.minWidth - 2 * _horizontalPadding;
     
@@ -148,6 +155,8 @@
             }
         }
     }
+    
+    frame.size.height = minHeight;
     
     self.label.frame = frame;
 
@@ -263,6 +272,14 @@
 
 - (UIReturnKeyType)returnKeyType {
     return self.textField.returnKeyType;
+}
+
+- (CGFloat)minHeight {
+    if (self.isSelected && self.selectedStyle != nil) {
+        return self.selectedStyle.height;
+    } else {
+        return self.style.height;
+    }
 }
 
 @end
