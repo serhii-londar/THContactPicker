@@ -40,6 +40,7 @@
 - (void)removeContact:(id<ContactProtocol>)contact;
 - (void)removeAllContacts;
 - (BOOL)resignFirstResponder;
+- (void)clearTextField;
 
 // View Customization
 - (void)setContactViewStyle:(THContactViewStyle *)color selectedStyle:(THContactViewStyle *)selectedColor;

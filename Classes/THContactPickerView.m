@@ -290,6 +290,10 @@
 - (BOOL)becomeFirstResponder {
     return [self.textField becomeFirstResponder];
 }
+
+- (void)clearTextField {
+    self.textField.text = @"";
+}
     
 #pragma mark - Private functions
     
