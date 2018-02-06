@@ -634,5 +634,16 @@
 - (UIReturnKeyType)returnKeyType {
     return self.textField.returnKeyType;
 }
-    
-    @end
+
+- (UITextAutocapitalizationType)autocapitalizationType {
+    return self.textField.autocorrectionType;
+}
+
+- (void)setAutocapitalizationType:(UITextAutocapitalizationType)autocapitalizationType {
+    self.textField.autocapitalizationType = autocapitalizationType;
+    for (THContactView *contactView in self.contacts) {
+        contactView.autocapitalizationType = autocapitalizationType;
+    }
+}
+
+@end

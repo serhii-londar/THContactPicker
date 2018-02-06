@@ -49,7 +49,7 @@ NSString *THContactPickerContactCellReuseID = @"THContactPickerContactCell";
     self.contactPickerView.delegate = self;
     [self.contactPickerView setPlaceholderLabelText:@"Search"];
     [self.contactPickerView setContactViewStyle: [[THContactViewStyle alloc] initWithTextFieldTextColor: [UIColor colorWithRed:43.0 / 255.0 green:45.0 / 255.0 blue:45.0 / 255.0 alpha:1.0] labelTextColor: UIColor.whiteColor backgroundColor:[UIColor colorWithRed:221.0 / 255.0 green:221.0 / 255.0 blue:221.0 / 255.0 alpha:1.0] cornerRadiusFactor: 2.0 height:27.0]  selectedStyle: [[THContactViewStyle alloc] initWithTextFieldTextColor: [UIColor colorWithRed:43.0 / 255.0 green:45.0 / 255.0 blue:45.0 / 255.0 alpha:1.0] labelTextColor: UIColor.whiteColor backgroundColor:[UIColor colorWithRed:221.0 / 255.0 green:221.0 / 255.0 blue:221.0 / 255.0 alpha:1.0] cornerRadiusFactor: 0.0 height:17.0] ];
-     
+//    self.contactPickerView.autocapitalizationType = UITextAutocapitalizationTypeNone;
 //    [self.contactPickerView setContactViewStyle: [[THContactViewStyle alloc] initWithTextColor:[UIColor colorWithRed:43.0 / 255.0 green:45.0 / 255.0 blue:45.0 / 255.0 alpha:1.0] backgroundColor:[UIColor colorWithRed:221.0 / 255.0 green:221.0 / 255.0 blue:221.0 / 255.0 alpha:1.0] cornerRadiusFactor:2.0] selectedStyle:nil];
     [self.view addSubview:self.contactPickerView];
     
