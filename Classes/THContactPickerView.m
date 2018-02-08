@@ -646,4 +646,15 @@
     }
 }
 
+- (UIKeyboardType)keyboardType {
+    return self.textField.keyboardType;
+}
+    
+- (void)setKeyboardType:(UIKeyboardType)keyboardType {
+    self.textField.keyboardType = keyboardType;
+    for (THContactView *contactView in self.contacts) {
+        contactView.keyboardType = keyboardType;
+    }
+}
+
 @end
